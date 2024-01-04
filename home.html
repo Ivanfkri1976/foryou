@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideShow</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <img id="myImg" src="amplop.png" alt="snow">
+  <div class="p">
+  <h1>Hai, Tolong dibaca yaak...</h1>
+</div>
+
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <div class="container">
+        <div class="content-slide">
+            <div class="imgslide fade">
+                <div class="numberslide">1 / 10</div>
+                <img src="img/pentol1.jpg" alt="">
+                <div class="text">Hai, selamat ulang tahun yak, doa terbaik untuk kamu</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">2 / 10</div>
+                <img src="img/pentol2.jpg" alt="">
+                <div class="text">Aku mau bilang terimakasih sama kamu karena kamu pernah hadir di kehidupan aku</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">3 / 10</div>
+                <img src="img/pentol3.jpg" alt="">
+                <div class="text">Aku minta maaf kalo aku bukan orang yang terbaik selama orang yang kamu temui, dan aku mengakui itu</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">4 / 10</div>
+                <img src="img/pentol4.jpg" alt="">
+                <div class="text">Aku tau kamu selalu cari tau kabar aku</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">5 / 10</div>
+                <img src="img/pentol5.jpg" alt="">
+                <div class="text">Dan aku minta maaf kalo sekarang aku udah berubah ga seperti dulu lagi</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">6 / 10</div>
+                <img src="img/pentol6.jpg" alt="">
+                <div class="text">Kamu berhak mendapatkan orang yang terbaik dan lebih baik dari aku</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">7 / 10</div>
+                <img src="img/pentol7.jpg" alt="">
+                <div class="text">Terakhir, aku mau bilang makasih banyak sama kamu, selama aku sakit kemarin, kamu selalu ada buat aku</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">8 / 10</div>
+                <img src="img/pentol8.jpg" alt="">
+                <div class="text">Jaga diri baik-baik disana yak, kalo ada apa-apa aku akan selalu ada buat kamu kapanpun itu</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">9 / 10</div>
+                <img src="img/pentol9.jpg" alt="">
+                <div class="text">Jaga kesehatan, jangan lupa mam, Bobonya gabole malem-malem okeiii</div>
+            </div>
+
+            <div class="imgslide fade">
+                <div class="numberslide">10 / 10</div>
+                <img src="img/pentol10.jpg" alt="">
+                <div class="text">Aku pamit, dan maaf cuma ini yang bisa aku kasih di hari ulang tahun kamu, Babaii cantikk</div>
+            </div>
+
+            <a class="prev" onClick="nextslide(-1)">&#10094;</a>
+            <a class="next" onClick="nextslide(1)">&#10095;</a> 
+        </div>
+        </div>
+        <div class="btn">
+          <a href="kado.html">Klik this</a>
+        </div>
+        <div class="page">
+            <span class="dot" onClick="dotslide(1)"></span>
+            <span class="dot" onClick="dotslide(2)"></span>
+            <span class="dot" onClick="dotslide(3)"></span>
+            <span class="dot" onClick="dotslide(4)"></span>
+            <span class="dot" onClick="dotslide(5)"></span>
+            <span class="dot" onClick="dotslide(6)"></span>
+            <span class="dot" onClick="dotslide(7)"></span>
+            <span class="dot" onClick="dotslide(8)"></span>
+            <span class="dot" onClick="dotslide(9)"></span>
+            <span class="dot" onClick="dotslide(10)"></span>
+        </div>
+
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var back = document.getElementsByClassName("close")[0];
+
+        img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+
+        }
+        var slideIndex = 1;
+            showSlide(slideIndex);
+
+        function nextslide(n){
+            showSlide(slideIndex += n);
+        }
+
+        function dotslide(n){
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            var i;
+            var slides = document.getElementsByClassName("imgslide");
+            var dot = document.getElementsByClassName("dot");
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < slides.length; i++) {
+
+                dot[i].className = dot[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            dot[slideIndex - 1].className += " active";
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

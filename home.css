@@ -1,0 +1,195 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    background-image: url("bg.jpg");
+  }
+
+  #myImg {
+    z-index: 1;
+    width: 200px;
+    display: block;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-animation: pound;
+    animation:pound .2s infinite;
+    animation-duration: 2s;
+  }
+
+  @keyframes pound {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+  }
+
+  .p h1 {
+    font-size: 17px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .modal {
+    display: none;
+    top: 200vh;
+    margin-top: -150px;
+  }
+
+  .close {
+    position: absolute;
+    z-index: 2;
+    background: black;
+    border-radius: 10px;
+    width: 30px;
+    text-align: center;
+    top: 150px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } 
+
+/* Slideshow container */
+.content-slide {
+    position: relative;
+    width:230px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 0px;
+    margin: auto;
+    margin-top: -100px;
+    border: 2px solid black;
+}
+
+.imgslide {
+    display: none;
+}
+
+img {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 15px;
+    color: rgb(255, 254, 224);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.next {
+    margin-right: -30px;
+    border-radius: 10px;
+}
+
+.prev {
+    margin-left: -30px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+}
+
+.text {
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.content-slide .numberslide {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* resposive */
+
+@media screen and (max-width: 800px) {
+
+    .content-slide {
+        padding: 8px 50px 12px 50px;
+    }
+
+    .next {
+        right: 50px;
+        border-radius: 10px;
+    }
+
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }    
+    to {
+        opacity: 1;
+    }
+}
+
+.btn a {
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btn a:hover {
+    background-color: white;
+    color: black;
+}
